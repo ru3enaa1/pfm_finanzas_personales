@@ -18,6 +18,7 @@
 PFM es una aplicación web de gestión financiera que combina **simplicidad de Nubank**, **claridad de Apple Cash** y **rigor de YNAB** para darle al usuario el control real de su dinero en una sola pantalla.
 
 Diseñada para usuarios hispanohablantes — sin tecnicismos contables, sin curva de aprendizaje, sin fricción.
+<img width="1920" height="920" alt="1 1" src="https://github.com/user-attachments/assets/4aabb931-89aa-4297-bb85-0c71155f5d43" />
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -51,6 +52,7 @@ PFM funciona con un modelo **freemium**: el usuario empieza con 30 días de PRO 
 | Modo Empresa | — | Próximamente | Acceso completo |
 
 El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y validación del módulo. Cuando se libere, los usuarios PRO podrán alternar a Modo Empresa con un toggle desde la app sin necesidad de un plan adicional.
+<img width="1920" height="921" alt="1 2" src="https://github.com/user-attachments/assets/f2abbed7-b492-4536-a35f-e6b6a122b49b" />
 
 ---
 
