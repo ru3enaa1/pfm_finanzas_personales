@@ -58,10 +58,16 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 
 ## Modo Personal — lo que ya está construido
 
+<img width="1920" height="917" alt="1 3" src="https://github.com/user-attachments/assets/a2463fad-d850-4650-b890-1f80f75872ab" />
+
+
 ### 🏦 Cuentas financieras
 - Tipos: corriente, ahorro, tarjeta de crédito, efectivo, inversión
 - Cuenta activa global desde la barra superior — toda la app se adapta al contexto seleccionado
 - Recálculo automático del saldo con cada movimiento
+
+<img width="1920" height="919" alt="1 4" src="https://github.com/user-attachments/assets/d97cfa63-7914-4715-8a34-2795e39cd71c" />
+
 
 ### 💸 Transacciones
 - Modal de registro **simplificado estilo Apple Cash** — solo monto y categoría
@@ -69,17 +75,26 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 - Timeline agrupado por fecha con filtros (Hoy / Semana / Mes / Todo) y categoría
 - Conversión de divisa en tiempo real sin alterar datos históricos
 
+<img width="1920" height="918" alt="1 5" src="https://github.com/user-attachments/assets/a10965fa-8c78-4f25-adb7-f6acdab7f3bd" />
+
+
 ### 📊 Presupuestos inteligentes
 - **Dos tipos en uno**: límite mensual variable (Mercado, Salidas) o pago fijo recurrente (Arriendo, Netflix)
 - Barras horizontales con código de color gradual: verde → amarillo → naranja → rojo
 - Click directo para añadir un gasto al presupuesto sin salir del módulo
 - Contexto dual estilo YNAB: límite global Y aporte de la cuenta activa
 
+<img width="1920" height="917" alt="1 6" src="https://github.com/user-attachments/assets/361f7fbe-4706-4c1f-a21f-b2ba86e80b03" />
+
+
 ### 🎯 Fondos de ahorro (bolsas)
 - Metas anuales (Vacaciones, Vehículo, Casa propia, etc.)
 - Aportes generan transacciones reales — el saldo baja, refleja realidad
 - Indicador "Meta alcanzada" con glow dorado al 100%
 - Archivado en lugar de borrado: los aportes históricos se preservan
+
+<img width="1920" height="920" alt="1 7" src="https://github.com/user-attachments/assets/8f605c18-efd1-4531-ab7e-1178d2b323d0" />
+
 
 ### 📈 Informes y analítica
 - Dashboard agregado de todas las cuentas del usuario
@@ -88,6 +103,9 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 - KPIs: ahorro neto con delta vs período anterior, tasa de ahorro, progreso fondos, consumo presupuestos
 - **Exportación CSV y PDF** (PRO) con 4 tipos de informe
 
+<img width="1920" height="920" alt="1 8" src="https://github.com/user-attachments/assets/8dec0612-782b-40fd-917c-8985e7b076df" />
+
+
 ### 🔔 Alertas y recordatorios
 - Campana en la barra superior con badge de no leídas, visible desde cualquier vista
 - Inbox cronológico con código de color por severidad (info / warn / crítica)
@@ -95,6 +113,9 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 - **Alertas críticas siempre activas** (saldo bajo, presupuesto sobrepasado)
 - Anti-spam interno: misma alerta no se duplica en menos de 60 minutos
 - **Email opcional** (PRO) cuando el usuario configura SMTP
+
+<img width="1920" height="919" alt="1 9" src="https://github.com/user-attachments/assets/7bb90d67-5439-4e77-ad27-2985c2bb1f74" />
+
 
 ### 🌍 Multi-divisa (PRO)
 - Cambio entre **COP, USD y EUR** desde un chip en la barra superior
@@ -126,6 +147,9 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 ## Modo Empresa — en construcción
 
 PFM Empresa extiende la app personal con un módulo contable orientado al emprendedor colombiano. La interfaz ya está scaffolded y el usuario puede previsualizarla; la implementación funcional de cada apartado llega en fases sucesivas.
+
+<img width="1920" height="920" alt="2" src="https://github.com/user-attachments/assets/b8ab1564-309d-47e2-97ac-b5347edd5b93" />
+
 
 Apartados planeados:
 
