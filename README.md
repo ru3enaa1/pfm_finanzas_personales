@@ -18,7 +18,6 @@
 PFM es una aplicación web de gestión financiera que combina **simplicidad de Nubank**, **claridad de Apple Cash** y **rigor de YNAB** para darle al usuario el control real de su dinero en una sola pantalla.
 
 Diseñada para usuarios hispanohablantes — sin tecnicismos contables, sin curva de aprendizaje, sin fricción.
-<img width="1920" height="920" alt="1 1" src="https://github.com/user-attachments/assets/4aabb931-89aa-4297-bb85-0c71155f5d43" />
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -30,7 +29,7 @@ Diseñada para usuarios hispanohablantes — sin tecnicismos contables, sin curv
 └─────────────────────────────────────────────────┘
 ```
 
-A futuro PFM ofrece también un **Modo Empresa** dedicado a emprendedores y pymes en Colombia: facturación electrónica, calendario fiscal DIAN, reportes financieros y trazabilidad de activos digitales (cripto/CBDC). El usuario alterna entre Modo Personal y Modo Empresa con un solo click desde la barra superior, manteniendo una experiencia continua dentro de la misma app.
+PFM incluye además un **Modo Empresa** completo y funcional, dedicado a emprendedores y pymes en Colombia: panel del negocio, movimientos con IVA automático, terceros, calendario fiscal DIAN, facturación, reportes financieros, trazabilidad de activos digitales (cripto) y una Guía del Emprendedor gamificada. El usuario alterna entre Modo Personal y Modo Empresa con un solo click desde la barra superior, manteniendo una experiencia continua dentro de la misma app. Un copiloto global ("Capi") acompaña ambos modos.
 
 ---
 
@@ -49,25 +48,18 @@ PFM funciona con un modelo **freemium**: el usuario empieza con 30 días de PRO 
 | Exportación CSV / PDF | — | Sí | — |
 | Alertas por email | — | Sí | — |
 | Multimoneda | Solo COP | COP / USD / EUR | — |
-| Modo Empresa | — | Próximamente | Acceso completo |
+| Modo Empresa | — | Incluido (toggle) | Acceso completo |
 
-El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y validación del módulo. Cuando se libere, los usuarios PRO podrán alternar a Modo Empresa con un toggle desde la app sin necesidad de un plan adicional.
-<img width="1920" height="921" alt="1 2" src="https://github.com/user-attachments/assets/f2abbed7-b492-4536-a35f-e6b6a122b49b" />
+El **Modo Empresa ya está construido y operativo**, accesible para usuarios PRO con un toggle desde la barra superior, sin plan adicional. El plan EMPRESA dedicado (multi-usuario, soporte y funciones avanzadas) se libera al completar las fases técnicas finales (facturación electrónica real con CUFE, partida doble).
 
 ---
 
 ## Modo Personal — lo que ya está construido
 
-<img width="1920" height="917" alt="1 3" src="https://github.com/user-attachments/assets/a2463fad-d850-4650-b890-1f80f75872ab" />
-
-
 ### 🏦 Cuentas financieras
 - Tipos: corriente, ahorro, tarjeta de crédito, efectivo, inversión
 - Cuenta activa global desde la barra superior — toda la app se adapta al contexto seleccionado
 - Recálculo automático del saldo con cada movimiento
-
-<img width="1920" height="919" alt="1 4" src="https://github.com/user-attachments/assets/d97cfa63-7914-4715-8a34-2795e39cd71c" />
-
 
 ### 💸 Transacciones
 - Modal de registro **simplificado estilo Apple Cash** — solo monto y categoría
@@ -75,26 +67,17 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 - Timeline agrupado por fecha con filtros (Hoy / Semana / Mes / Todo) y categoría
 - Conversión de divisa en tiempo real sin alterar datos históricos
 
-<img width="1920" height="918" alt="1 5" src="https://github.com/user-attachments/assets/a10965fa-8c78-4f25-adb7-f6acdab7f3bd" />
-
-
 ### 📊 Presupuestos inteligentes
 - **Dos tipos en uno**: límite mensual variable (Mercado, Salidas) o pago fijo recurrente (Arriendo, Netflix)
 - Barras horizontales con código de color gradual: verde → amarillo → naranja → rojo
 - Click directo para añadir un gasto al presupuesto sin salir del módulo
 - Contexto dual estilo YNAB: límite global Y aporte de la cuenta activa
 
-<img width="1920" height="917" alt="1 6" src="https://github.com/user-attachments/assets/361f7fbe-4706-4c1f-a21f-b2ba86e80b03" />
-
-
 ### 🎯 Fondos de ahorro (bolsas)
 - Metas anuales (Vacaciones, Vehículo, Casa propia, etc.)
 - Aportes generan transacciones reales — el saldo baja, refleja realidad
 - Indicador "Meta alcanzada" con glow dorado al 100%
 - Archivado en lugar de borrado: los aportes históricos se preservan
-
-<img width="1920" height="920" alt="1 7" src="https://github.com/user-attachments/assets/8f605c18-efd1-4531-ab7e-1178d2b323d0" />
-
 
 ### 📈 Informes y analítica
 - Dashboard agregado de todas las cuentas del usuario
@@ -103,9 +86,6 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 - KPIs: ahorro neto con delta vs período anterior, tasa de ahorro, progreso fondos, consumo presupuestos
 - **Exportación CSV y PDF** (PRO) con 4 tipos de informe
 
-<img width="1920" height="920" alt="1 8" src="https://github.com/user-attachments/assets/8dec0612-782b-40fd-917c-8985e7b076df" />
-
-
 ### 🔔 Alertas y recordatorios
 - Campana en la barra superior con badge de no leídas, visible desde cualquier vista
 - Inbox cronológico con código de color por severidad (info / warn / crítica)
@@ -113,9 +93,6 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 - **Alertas críticas siempre activas** (saldo bajo, presupuesto sobrepasado)
 - Anti-spam interno: misma alerta no se duplica en menos de 60 minutos
 - **Email opcional** (PRO) cuando el usuario configura SMTP
-
-<img width="1920" height="919" alt="1 9" src="https://github.com/user-attachments/assets/7bb90d67-5439-4e77-ad27-2985c2bb1f74" />
-
 
 ### 🌍 Multi-divisa (PRO)
 - Cambio entre **COP, USD y EUR** desde un chip en la barra superior
@@ -144,28 +121,50 @@ El plan EMPRESA estará disponible una vez se complete la fase de desarrollo y v
 
 ---
 
-## Modo Empresa — en construcción
+## Modo Empresa — construido y operativo
 
-PFM Empresa extiende la app personal con un módulo contable orientado al emprendedor colombiano. La interfaz ya está scaffolded y el usuario puede previsualizarla; la implementación funcional de cada apartado llega en fases sucesivas.
+PFM Empresa extiende la app personal con un módulo contable orientado al emprendedor colombiano. Los apartados siguientes **ya están construidos y funcionan con datos reales** (base de caja, motor fiscal por país). Lo que opera con interfaz final hoy:
 
-<img width="1920" height="920" alt="2" src="https://github.com/user-attachments/assets/b8ab1564-309d-47e2-97ac-b5347edd5b93" />
+### 🏠 Panel del negocio
+- KPIs reales del mes: caja disponible, ingresos, gastos, utilidad, IVA neto a pagar
+- Próximo vencimiento tributario y **salud fiscal** (score 0–100) de un vistazo
+- Gráfico de ingresos vs. gastos de los últimos 6 meses
 
+### ↕ Movimientos
+- Registro de ingresos y gastos con **categorización fiscal** (gravado / exento / excluido) e **IVA automático** (motor fiscal Strategy por país — Colombia)
+- Cuentas por cobrar / por pagar (CxC/CxP) y pulso de caja diario
+- **Soportes adjuntos** (PDF/JPG/PNG): un gasto soportado queda listo para la DIAN
 
-Apartados planeados:
+### 👥 Terceros
+- Agenda de clientes y proveedores con NIT, régimen tributario y tipo
+- Saldos por tercero y ficha de detalle; alimenta el cálculo de impuestos
 
-| | Módulo | Para qué sirve |
-|---|---|---|
-| 🏠 | **Panel** | KPIs del negocio de un vistazo: caja, ingresos, gastos, utilidad, próximo impuesto que vence |
-| ↕ | **Movimientos** | Lista única de ingresos y gastos del negocio con categorización fiscal e IVA automático |
-| 📄 | **Facturación** | Emisión de facturas electrónicas vía proveedor tecnológico autorizado por DIAN |
-| 📆 | **DIAN / Impuestos** | Calendario tributario + cálculo automático de IVA y retenciones + carpeta DIAN anual |
-| 💬 | **Guía / Asistente** | Copiloto para emprendedores sin formación contable: explica términos, recuerda vencimientos, evalúa salud fiscal |
-| 👥 | **Terceros** | Agenda de clientes y proveedores con NIT y régimen tributario |
-| 📊 | **Reportes** | Estado de Resultados, Balance General, Flujo de Caja en cualquier momento |
-| ⬢ | **Activos digitales** | Trazabilidad de cripto (USDC, USDT, BTC) y CBDC: costo base, ganancias realizadas, certificado de origen lícito |
-| ⚙ | **Configuración fiscal** | RUT, régimen tributario, periodicidad de IVA, actividad económica CIIU |
+### 📆 DIAN / Impuestos
+- Calendario tributario con línea de tiempo anual y obligaciones por estado
+- Liquidación automática de IVA a partir de los movimientos
+- **Carpeta DIAN** descargable (ZIP con PDF resumen + CSV) y salud fiscal accionable
+
+### 📄 Facturación
+- Cuentas de cobro / facturas de venta con **numeración consecutiva**, IVA y PDF
+- Al emitir genera el **ingreso enlazado y soportado** en Movimientos automáticamente
+- *E6-ready*: la factura electrónica real con CUFE vía proveedor tecnológico autorizado es la siguiente fase (el modelo de datos ya está preparado)
+
+### ⬢ Activos digitales — "Bóveda"
+- Tesorería cripto (BTC, ETH, USDC, USDT, SOL, POL) **valorada en pesos**
+- **Motor FIFO**: costo base y ganancia/pérdida realizada por venta
+- Trazabilidad on-chain, **Score "Origen Verificado"**, **Certificado de trazabilidad** (PDF con sello SHA-256), **Snapshot 31-dic** y **Modo Auditor** (enlace de solo lectura para el contador)
+
+### 📊 Reportes — "Radiografía del negocio"
+- **Estado de Resultados**, **Posición financiera** y **Flujo de Caja** en una sola pantalla
+- Selector de período, exportación CSV/PDF y compartir como documento formal (banco / socio / contador)
+
+### 💬 Guía / Asistente
+- **Guía del Emprendedor gamificada**: ruta de 8 capítulos, racha semanal, simulacro DIAN, insignias y checklist legal vivo — la gamificación se deriva del estado **real** del negocio
+- **Capi**, copiloto global presente en **toda la app** (Personal y Empresa)
 
 **Visión central**: que el empresario use el módulo sin necesidad de saber contabilidad, mientras el sistema mantiene su información lista para presentar a la DIAN y demostrar que su dinero es **limpio, soportado y suyo**.
+
+> **Honestidad de producto:** lo construido opera en base de caja con datos reales y etiquetado honesto. La factura electrónica con CUFE, el Balance General NIIF (partida doble) y la IA real de Capi son fases técnicas siguientes — nunca se muestran datos inventados ni sellos oficiales falsos.
 
 ---
 
@@ -194,23 +193,24 @@ El plan freemium se centraliza en un único `PlanService` que calcula el plan ef
 
 ## Roadmap
 
-### Corto plazo (próximas iteraciones)
-- 💳 **Pasarela de pago real** (Stripe / Mercado Pago) reemplazando el checkout mock actual
-- 🔑 **Recuperación de contraseña por email** para usuarios que pierden el acceso
-- 📜 **Historial de pagos visible en /perfil**
-- 🔐 **Verificación en dos pasos opcional** (TOTP con Google Authenticator)
-- 📊 **Fase 0 del Modo Empresa**: entidad Empresa, selector activo en la barra, panel funcional
+### Ya construido ✅
+- **Modo Personal completo** (cuentas, transacciones, presupuestos, fondos, informes, alertas, multidivisa, perfil)
+- **Modo Empresa E0–E5**: Panel, Movimientos (IVA automático), Terceros, DIAN/Impuestos (+ carpeta DIAN), Facturación, Activos digitales (FIFO + certificado + auditor), Reportes y Guía del Emprendedor
+- **Capi**, copiloto global en toda la app (respuestas guiadas)
 
-### Mediano plazo
-- 🧾 **Fase 1 del Modo Empresa**: facturación electrónica DIAN vía proveedor autorizado + movimientos con IVA
-- 📋 **Fase 2 del Modo Empresa**: calendario tributario funcional + reportes (Estado de Resultados, Balance, Flujo de Caja)
-- 💱 **Fase 3 del Modo Empresa**: activos digitales con trazabilidad on-chain
+### Próximo (técnico)
+- 🧾 **Facturación electrónica real (CUFE)** vía proveedor tecnológico autorizado por la DIAN
+- 📚 **Partida doble + Balance General NIIF** (hoy reportes en base de caja)
+- 💱 **Cripto F2/F3**: precios en vivo (CoinGecko) y verificación on-chain real
+- 🎮 **Guía — fases siguientes**: empresa de práctica (demo), detección automática de misiones, certificados compartibles
+- 🤖 **Capi con IA real** (Claude API) contextualizado al estado financiero del usuario
+- 💳 **Pasarela de pago real** (Wompi / Stripe) y desbloqueos por logro
 
 ### Largo plazo
-- 🤖 **Asistente IA financiero** contextualizado al estado real del usuario
 - 📱 **App móvil nativa** complementaria
-- 🔗 **Integración bancaria** vía Open Banking
-- 🏢 **Multi-usuario y roles** dentro de una misma empresa (equipos pequeños)
+- 🌎 **Multi-país** (SAT / SUNAT / SII / AEAT) — el motor fiscal ya es extensible por país
+- 🔗 **Integración bancaria** vía Open Banking y conciliación automática
+- 🏢 **Multi-usuario y roles** dentro de una misma empresa + **nómina electrónica**
 
 ---
 
