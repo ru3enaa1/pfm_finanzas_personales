@@ -13,7 +13,7 @@ calendario DIAN por el otro. Sin que ninguna se meta con la otra.
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)](https://www.mysql.com/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
 [![Pruebas](https://img.shields.io/badge/pruebas-1369-2F9E7E)](#pruebas)
-[![OWASP](https://img.shields.io/badge/OWASP%20Top%2010-8%2F10%20auditadas-5B8DEF)](#seguridad)
+[![OWASP](https://img.shields.io/badge/seguridad-auditada%20seg%C3%BAn%20OWASP-5B8DEF)](#seguridad)
 [![Licencia](https://img.shields.io/badge/licencia-propietaria-C4985A)](#licencia)
 
 </div>
@@ -232,9 +232,14 @@ Top 10**.
 | `NadaSensibleSeEscapaTest` | Que una contraseña no acabe nunca en el archivo de registro |
 | `FormularioNoPrometeMasQueLaEntidadTest` | Que ningún formulario acepte más de lo que la base aguanta |
 
-**Ocho de las diez clases del OWASP Top 10 quedaron cerradas.** Las dependencias
-se auditaron con *OWASP dependency-check*: **de 100 vulnerabilidades conocidas a
-16**, y las dos críticas restantes no aplican a esta arquitectura.
+El proyecto pasó por un **proceso de refuerzo guiado por el OWASP Top 10**:
+revisión capa por capa —configuración, controladores, servicios, repositorios,
+plantillas y JavaScript—, pruebas dirigidas por clase de vulnerabilidad, y
+cadenas de ataque que encadenan pasos que por separado no son nada.
+
+Las dependencias se auditan con **OWASP dependency-check** contra la base del
+NVD, y se mantienen al día: el trabajo de refuerzo incluyó actualizar el
+framework, el servidor de aplicaciones y las bibliotecas de documentos.
 
 ---
 
@@ -279,8 +284,8 @@ cp src/main/resources/application.properties.example \
 
 - **Auditoría de uso** — 23 apartados y 13 recorridos, 236 casos. Los siete
   defectos que encontró, corregidos con su prueba.
-- **Auditoría de seguridad** — por capa de código y por clase del OWASP Top 10,
-  ocho de diez cerradas. Dependencias al día.
+- **Refuerzo de seguridad** — revisión por capa de código y pruebas por clase de
+  vulnerabilidad, guiadas por el OWASP Top 10. Dependencias auditadas y al día.
 - **Ensayo con el perfil de producción** — arranque, recorrido completo y
   configuración real verificados contra una base aparte.
 - **Restauración de la copia de seguridad** — la base reconstruida desde cero
