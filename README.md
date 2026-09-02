@@ -1,236 +1,314 @@
 <div align="center">
 
-# PFM · Personal Finance Management
+# Pfm
 
-**Una plataforma de finanzas pensada para Latinoamérica con proyección europea.**
+**Tu dinero y el de tu negocio, en una sola cuenta.**
 
-[![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=spring)](https://spring.io/projects/spring-boot)
+Finanzas personales y contabilidad de empresa conviviendo bajo el mismo inicio de
+sesión: presupuestos, ahorro e informes por un lado; facturación, libros y
+calendario DIAN por el otro. Sin que ninguna se meta con la otra.
+
+[![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-6DB33F?logo=spring)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)](https://www.mysql.com/)
-[![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
+[![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
+[![Pruebas](https://img.shields.io/badge/pruebas-1369-2F9E7E)](#pruebas)
+[![OWASP](https://img.shields.io/badge/OWASP%20Top%2010-8%2F10%20auditadas-5B8DEF)](#seguridad)
+[![Licencia](https://img.shields.io/badge/licencia-propietaria-C4985A)](#licencia)
 
 </div>
 
 ---
 
-## ¿Qué es PFM?
+## El problema
 
-PFM es una aplicación web de gestión financiera que combina **simplicidad de Nubank**, **claridad de Apple Cash** y **rigor de YNAB** para darle al usuario el control real de su dinero en una sola pantalla.
+Quien tiene un negocio pequeño acaba mezclando la plata del bolsillo con la del
+negocio. No por desorden: **porque las herramientas obligan a elegir.** Las
+aplicaciones de finanzas personales no saben de IVA ni de retenciones; los
+programas contables dan por hecho que ya tienes contador y no te preguntan cómo
+vas de gastos este mes. La misma cuenta paga el mercado y al proveedor, y no hay
+un sitio donde eso se vea.
 
-Diseñada para usuarios hispanohablantes — sin tecnicismos contables, sin curva de aprendizaje, sin fricción.
+Pfm no elige. Es **una cuenta con dos modos**, y se cambia de uno a otro con un
+clic desde la barra superior.
 
-```
-┌─────────────────────────────────────────────────┐
-│  💰 Saldo                    $ 4,250,000  COP   │
-│                                                 │
-│  ╴ Este mes ╴      ╴ Filtrar ╴                  │
-│  +2,300,000 ingresos              8 movimientos │
-│  -1,150,000 gastos                              │
-└─────────────────────────────────────────────────┘
-```
+---
 
-PFM incluye además un **Modo Empresa** completo y funcional, dedicado a emprendedores y pymes en Colombia: panel del negocio, movimientos con IVA automático, terceros, calendario fiscal DIAN, facturación, reportes financieros, trazabilidad de activos digitales (cripto) y una Guía del Emprendedor gamificada. El usuario alterna entre Modo Personal y Modo Empresa con un solo click desde la barra superior, manteniendo una experiencia continua dentro de la misma app. Un copiloto global ("Capi") acompaña ambos modos.
+## Los dos modos
+
+### Modo Personal
+
+Para llevar tu propia plata, sin abrir ninguna empresa.
+
+| | |
+|---|---|
+| **Cuentas** | Bancarias, efectivo, tarjeta de crédito e inversión, con saldo derivado de sus movimientos |
+| **Transacciones** | Ingresos, gastos y transferencias entre cuentas, con categorías y adjuntos |
+| **Presupuestos** | Tope mensual por categoría, con barra de avance y aviso al acercarse al límite |
+| **Fondos de ahorro** | Bolsas con meta anual, aportes desde tus cuentas y seguimiento mes a mes |
+| **Informes** | Evolución mensual, gasto por categoría y comparativas, exportables a CSV, Excel y PDF |
+| **Alertas** | Recordatorios de gastos fijos y avisos por correo |
+| **Multimoneda** | COP, USD y EUR con conversión y tasa histórica |
+
+### Modo Empresa
+
+Contabilidad completa para una pyme colombiana, con validez fiscal.
+
+| | |
+|---|---|
+| **Panel** | Caja disponible, ingresos, gastos y utilidad del período, con serie de seis meses |
+| **Movimientos** | Ingresos y egresos con IVA y retenciones calculados según el régimen del tercero |
+| **Facturación** | Emisión y numeración consecutiva, cotizaciones y notas |
+| **Contabilidad** | Plan de cuentas editable, asientos automáticos y manuales, libros y balance de prueba |
+| **Salud contable** | Seis comprobaciones cruzadas que dicen cuál no cuadra, **por cuánto** y dónde se arregla |
+| **DIAN** | Calendario de vencimientos que se mueve con el dígito del NIT, retenciones y exógena |
+| **Inventario** | Catálogo con costo y existencias, y kardex valorizado |
+| **Activos fijos** | Alta, depreciación y baja |
+| **Nómina** | Liquidación con sus aportes y provisiones |
+| **Cierres** | Mensual —con carpeta lista para el contador— y anual |
+| **Terceros** | Clientes y proveedores con su régimen y su documento |
+| **Colaboradores** | Cinco roles: propietario, contador, auxiliar contable, revisor fiscal y socio en solo lectura |
+| **Activos digitales** | Trazabilidad de cripto con score de origen de fondos |
+
+### Lo que une a los dos
+
+- **Capi**, un asistente que acompaña ambos modos y responde sobre tus propios datos.
+- **Aislamiento por diseño.** Un colaborador ve la empresa a la que lo invitaste y
+  nada más: nunca las finanzas personales de nadie. Hay pruebas dedicadas a que
+  esa frontera no se mueva.
+- **Enlace de auditor.** Una vista de solo lectura para el contador, con **token
+  expirable y sin necesidad de cuenta**.
+
+---
+
+## Vienes de Excel
+
+Cambiar de herramienta no debería costar la historia. Se importan cuatro cosas:
+
+| | |
+|---|---|
+| **Clientes y proveedores** | Nombre, NIT y contacto |
+| **Movimientos** | Ingresos y egresos con su fecha, valor e IVA |
+| **Saldos iniciales** | El balance con el que llegas: caja, cartera, deudas y patrimonio |
+| **Inventario** | Catálogo con costo y existencias |
+
+Tú emparejas las columnas —nada se adivina cuando adivinar cambiaría un número—,
+la importación dice **qué fila no pudo leer y por qué**, y si aun así sale mal,
+**se deshace**.
 
 ---
 
 ## Planes
 
-PFM funciona con un modelo **freemium**: el usuario empieza con 30 días de PRO al registrarse y, si decide no pagar, queda en un plan FREE indefinido con lo esencial para no perder sus datos.
+Al registrarte entras con **30 días de Pro incluidos**. Al terminar, la cuenta
+vuelve a Free automáticamente y no se cobra nada.
 
-| | **FREE** | **PRO** | **EMPRESA** |
+| | **Free** | **Pro** | **Empresa** |
 |---|---|---|---|
-| Precio | $0 indefinido | $9.900 COP / mes | Próximamente |
-| Cuentas | 1 | Ilimitadas | — |
-| Presupuestos | 3 activos | Ilimitados | — |
-| Bolsas de ahorro | 1 | Ilimitadas | — |
-| Transacciones | Ilimitadas | Ilimitadas | — |
-| Informes en pantalla | Sí | Sí | — |
-| Exportación CSV / PDF | — | Sí | — |
-| Alertas por email | — | Sí | — |
-| Multimoneda | Solo COP | COP / USD / EUR | — |
-| Modo Empresa | — | Incluido (toggle) | Acceso completo |
+| Precio | $0, sin caducidad | $19.900 COP/mes | $69.900 COP/mes |
+| Cuentas · presupuestos · fondos | 1 · 3 · 1 | Sin límite | Sin límite |
+| Informes en pantalla | Sí | Sí | Sí |
+| Exportación y alertas por correo | — | Sí | Sí |
+| Capi | — | Sí | Sí |
+| Modo Empresa | — | Sobre una **empresa de práctica** | Sobre **tu empresa real** |
+| Invitar a tu contador | — | — | Sí |
 
-El **Modo Empresa ya está construido y operativo**, accesible para usuarios PRO con un toggle desde la barra superior, sin plan adicional. El plan EMPRESA dedicado (multi-usuario, soporte y funciones avanzadas) se libera al completar las fases técnicas finales (facturación electrónica real con CUFE, partida doble).
+> **Degradar no es despojar.** Si dejas de pagar, no se borra nada: la cuenta
+> vuelve a Free y la empresa pasa a **solo lectura**. La sigues viendo entera y
+> puedes exportar tus libros, tu inventario y tus movimientos. Lo que no puedes
+> es seguir registrando hasta reactivar el plan.
 
----
-
-## Modo Personal — lo que ya está construido
-
-### 🏦 Cuentas financieras
-- Tipos: corriente, ahorro, tarjeta de crédito, efectivo, inversión
-- Cuenta activa global desde la barra superior — toda la app se adapta al contexto seleccionado
-- Recálculo automático del saldo con cada movimiento
-
-### 💸 Transacciones
-- Modal de registro **simplificado estilo Apple Cash** — solo monto y categoría
-- Vinculación opcional a presupuestos para tracking automático
-- Timeline agrupado por fecha con filtros (Hoy / Semana / Mes / Todo) y categoría
-- Conversión de divisa en tiempo real sin alterar datos históricos
-
-### 📊 Presupuestos inteligentes
-- **Dos tipos en uno**: límite mensual variable (Mercado, Salidas) o pago fijo recurrente (Arriendo, Netflix)
-- Barras horizontales con código de color gradual: verde → amarillo → naranja → rojo
-- Click directo para añadir un gasto al presupuesto sin salir del módulo
-- Contexto dual estilo YNAB: límite global Y aporte de la cuenta activa
-
-### 🎯 Fondos de ahorro (bolsas)
-- Metas anuales (Vacaciones, Vehículo, Casa propia, etc.)
-- Aportes generan transacciones reales — el saldo baja, refleja realidad
-- Indicador "Meta alcanzada" con glow dorado al 100%
-- Archivado en lugar de borrado: los aportes históricos se preservan
-
-### 📈 Informes y analítica
-- Dashboard agregado de todas las cuentas del usuario
-- Selector global de período (Esta semana / Este mes / Este año)
-- 4 visualizaciones complementarias: línea temporal, dona de distribución, barras diarias y KPIs clave
-- KPIs: ahorro neto con delta vs período anterior, tasa de ahorro, progreso fondos, consumo presupuestos
-- **Exportación CSV y PDF** (PRO) con 4 tipos de informe
-
-### 🔔 Alertas y recordatorios
-- Campana en la barra superior con badge de no leídas, visible desde cualquier vista
-- Inbox cronológico con código de color por severidad (info / warn / crítica)
-- Configuración en 2 columnas: Alertas reactivas + Recordatorios proactivos
-- **Alertas críticas siempre activas** (saldo bajo, presupuesto sobrepasado)
-- Anti-spam interno: misma alerta no se duplica en menos de 60 minutos
-- **Email opcional** (PRO) cuando el usuario configura SMTP
-
-### 🌍 Multi-divisa (PRO)
-- Cambio entre **COP, USD y EUR** desde un chip en la barra superior
-- Saldos, transacciones y presupuestos se reconvierten al instante
-- Almacenamiento siempre en moneda base — sin ambigüedades históricas
-
-### 🎨 Tema claro / oscuro
-- Toggle sol/luna en la barra superior
-- Preferencia persistente del usuario, sobrevive entre sesiones
-- Cero parpadeo al cambiar de página
-
-### 👤 Configuración de cuenta
-- Página `/perfil` estilo Nubank con tarjetas apilables
-- Editar nombre y apellido
-- **Cambio de email** en 2 pasos con código de verificación (OTP de 6 dígitos al nuevo correo, expira en 15 minutos)
-- **Cambio de contraseña** con medidor de fortaleza visual (rojo/amarillo/verde/dorado) y verificación de coincidencia
-- **Eliminar cuenta** con doble confirmación (escribir correo + contraseña) — borra todos los datos en cascada
-- Estado del plan visible con días restantes + acciones Activar / Renovar / Cancelar
-
-### 🔐 Seguridad
-- Autenticación con cifrado BCrypt
-- Protección CSRF en todos los formularios (incluido el cierre de sesión)
-- Validación contra acceso indebido en cada endpoint
-- Códigos de verificación se almacenan únicamente en formato hash, nunca en texto plano
-- Rate-limit entre solicitudes de OTP para prevenir abuso
+Los precios se leen de la configuración en un único sitio, así que la página de
+planes, el cobro y los datos estructurados del buscador **no pueden decir cifras
+distintas**.
 
 ---
 
-## Modo Empresa — construido y operativo
-
-PFM Empresa extiende la app personal con un módulo contable orientado al emprendedor colombiano. Los apartados siguientes **ya están construidos y funcionan con datos reales** (base de caja, motor fiscal por país). Lo que opera con interfaz final hoy:
-
-### 🏠 Panel del negocio
-- KPIs reales del mes: caja disponible, ingresos, gastos, utilidad, IVA neto a pagar
-- Próximo vencimiento tributario y **salud fiscal** (score 0–100) de un vistazo
-- Gráfico de ingresos vs. gastos de los últimos 6 meses
-
-### ↕ Movimientos
-- Registro de ingresos y gastos con **categorización fiscal** (gravado / exento / excluido) e **IVA automático** (motor fiscal Strategy por país — Colombia)
-- Cuentas por cobrar / por pagar (CxC/CxP) y pulso de caja diario
-- **Soportes adjuntos** (PDF/JPG/PNG): un gasto soportado queda listo para la DIAN
-
-### 👥 Terceros
-- Agenda de clientes y proveedores con NIT, régimen tributario y tipo
-- Saldos por tercero y ficha de detalle; alimenta el cálculo de impuestos
-
-### 📆 DIAN / Impuestos
-- Calendario tributario con línea de tiempo anual y obligaciones por estado
-- Liquidación automática de IVA a partir de los movimientos
-- **Carpeta DIAN** descargable (ZIP con PDF resumen + CSV) y salud fiscal accionable
-
-### 📄 Facturación
-- Cuentas de cobro / facturas de venta con **numeración consecutiva**, IVA y PDF
-- Al emitir genera el **ingreso enlazado y soportado** en Movimientos automáticamente
-- *E6-ready*: la factura electrónica real con CUFE vía proveedor tecnológico autorizado es la siguiente fase (el modelo de datos ya está preparado)
-
-### ⬢ Activos digitales — "Bóveda"
-- Tesorería cripto (BTC, ETH, USDC, USDT, SOL, POL) **valorada en pesos**
-- **Motor FIFO**: costo base y ganancia/pérdida realizada por venta
-- Trazabilidad on-chain, **Score "Origen Verificado"**, **Certificado de trazabilidad** (PDF con sello SHA-256), **Snapshot 31-dic** y **Modo Auditor** (enlace de solo lectura para el contador)
-
-### 📊 Reportes — "Radiografía del negocio"
-- **Estado de Resultados**, **Posición financiera** y **Flujo de Caja** en una sola pantalla
-- Selector de período, exportación CSV/PDF y compartir como documento formal (banco / socio / contador)
-
-### 💬 Guía / Asistente
-- **Guía del Emprendedor gamificada**: ruta de 8 capítulos, racha semanal, simulacro DIAN, insignias y checklist legal vivo — la gamificación se deriva del estado **real** del negocio
-- **Capi**, copiloto global presente en **toda la app** (Personal y Empresa)
-
-**Visión central**: que el empresario use el módulo sin necesidad de saber contabilidad, mientras el sistema mantiene su información lista para presentar a la DIAN y demostrar que su dinero es **limpio, soportado y suyo**.
-
-> **Honestidad de producto:** lo construido opera en base de caja con datos reales y etiquetado honesto. La factura electrónica con CUFE, el Balance General NIIF (partida doble) y la IA real de Capi son fases técnicas siguientes — nunca se muestran datos inventados ni sellos oficiales falsos.
-
----
-
-## Stack tecnológico
+## Stack
 
 | Capa | Tecnología |
 |---|---|
-| **Lenguaje** | Java 17 |
-| **Framework** | Spring Boot 3.x (Web + Security + Data JPA + Mail) |
-| **ORM** | Hibernate 6 |
-| **Base de datos** | MySQL 8 |
-| **Plantillas** | Thymeleaf 3 |
-| **Frontend** | HTML5 + CSS3 modular con tokens + Vanilla JS |
-| **Charts** | Chart.js 4 |
-| **PDF** | Apache PDFBox 3.0 |
+| Lenguaje | Java 17 |
+| Framework | Spring Boot 3.5.16 — Web, Data JPA, Security, Validation, Mail |
+| Vistas | Thymeleaf 3.1 con `thymeleaf-extras-springsecurity6` |
+| Base de datos | MySQL 8 |
+| Documentos | Apache PDFBox · Apache POI |
+| Construcción | Maven (wrapper incluido) |
+
+Sin framework de front: HTML, CSS y JavaScript sin librerías. Las maquetas del
+sitio público son HTML y CSS, no imágenes — pesan cero, se ven nítidas en
+cualquier pantalla y no envejecen cuando la aplicación cambia.
+
+### Dimensiones
+
+| | |
+|---|---|
+| Código Java | ~48.600 líneas en 423 clases |
+| Entidades | 52 |
+| Servicios | 69 |
+| Plantillas | 107 |
+| Endpoints HTTP | 253 |
+| Código de pruebas | ~36.700 líneas en 137 clases |
+| Pruebas | **1.369** |
 
 ---
 
-## Arquitectura
+## Decisiones de diseño que vale la pena conocer
 
-PFM está construido como un **monolito modular** con separación por capas (Controller → Service → Repository → Database) y agrupación por dominio. El sistema de tematización (claro/oscuro) y el cambio de modo (Personal/Empresa) viven en una capa transversal de preferencias del usuario que se propaga a todas las vistas vía cookies y atributos de página, lo que da una experiencia continua sin recargas costosas ni estado fantasma entre sesiones.
+**El balance no se guarda: se deriva.** Sale de los asientos cada vez que se
+pide, así que no existe el saldo desactualizado que hay que recalcular. Cuadra
+por construcción.
 
-El plan freemium se centraliza en un único `PlanService` que calcula el plan efectivo de cada usuario considerando whitelist familiar, tier activo y fecha de vencimiento del PRO. Cualquier nueva funcionalidad solo consulta a ese servicio para decidir si está disponible para el usuario actual, manteniendo la lógica de tier en un solo lugar.
+**Una sola puerta por regla.** Quién entra al Modo Empresa se decide en un único
+método. La regla llegó a estar escrita en tres sitios y el desajuste dejó entrar
+al panel personal bajo el cromo de empresa; desde entonces, una regla, un sitio.
+
+**Ninguna heurística decide sola algo que cambie un número.** En la importación,
+una columna llamada «Valor» puede ser base o puede llevar el IVA dentro: las dos
+lecturas dan cifras creíbles y una está mal en un 19%. Se pregunta.
+
+**Salud contable no puntúa: señala.** No da una nota sobre 100 —que no se puede
+accionar— sino la comprobación que falla, la diferencia exacta y el enlace a la
+pantalla donde se arregla.
+
+**El esquema se versiona a mano y es idempotente.** `ddl-auto` está en `none`.
+Cada migración vive en `database/schema.sql` y puede volver a ejecutarse sin
+romper nada.
 
 ---
 
-## Roadmap
+## Pruebas
 
-### Ya construido ✅
-- **Modo Personal completo** (cuentas, transacciones, presupuestos, fondos, informes, alertas, multidivisa, perfil)
-- **Modo Empresa E0–E5**: Panel, Movimientos (IVA automático), Terceros, DIAN/Impuestos (+ carpeta DIAN), Facturación, Activos digitales (FIFO + certificado + auditor), Reportes y Guía del Emprendedor
-- **Capi**, copiloto global en toda la app (respuestas guiadas)
+**1.369 pruebas, todas verdes con `clean`** — unas 36.700 líneas de código de
+prueba para 48.600 de producción.
 
-### Próximo (técnico)
-- 🧾 **Facturación electrónica real (CUFE)** vía proveedor tecnológico autorizado por la DIAN
-- 📚 **Partida doble + Balance General NIIF** (hoy reportes en base de caja)
-- 💱 **Cripto F2/F3**: precios en vivo (CoinGecko) y verificación on-chain real
-- 🎮 **Guía — fases siguientes**: empresa de práctica (demo), detección automática de misiones, certificados compartibles
-- 🤖 **Capi con IA real** (Claude API) contextualizado al estado financiero del usuario
-- 💳 **Pasarela de pago real** (Wompi / Stripe) y desbloqueos por logro
+No son 1.369 comprobaciones de que un método devuelve lo que devuelve. Hay tres
+familias, y cada una nació de un fallo real que la anterior no habría cogido.
 
-### Largo plazo
-- 📱 **App móvil nativa** complementaria
-- 🌎 **Multi-país** (SAT / SUNAT / SII / AEAT) — el motor fiscal ya es extensible por país
-- 🔗 **Integración bancaria** vía Open Banking y conciliación automática
-- 🏢 **Multi-usuario y roles** dentro de una misma empresa + **nómina electrónica**
+### 1 · Lo que solo se ve mirando
+
+Un defecto visual no rompe nada, así que ninguna prueba de dominio lo nota. **O se
+fija con una prueba, o vuelve.**
+
+| Prueba | Qué impide |
+|---|---|
+| `AislamientoPersonalTest` · `FronteraEntreModosTest` | Que un colaborador alcance datos personales, o que un modo pinte los del otro |
+| `InvariantesPlanTest` | Que la escalera de planes se rompa y un plan superior pierda lo que ya tenía |
+| `PagoIdempotenteTest` | Que un pago repetido cobre dos veces |
+| `PlantillasSanasTest` | Comentarios mal cerrados y `confirm()` del navegador |
+| `SeoTest` | Canónica que ignora la cabecera `Host`, JSON-LD válido y precios que no se duplican |
+| `ContrasteAaTest` | Que un cambio de color deje texto por debajo del mínimo legible |
+| `LandingComprobadoTest` | Anclas rotas, imágenes sin `alt`, títulos repetidos |
+| `LogotipoSinDeformarTest` · `BarraSuperiorTest` | Dos defectos visuales reales que llegaron a producirse y no rompían nada |
+| `ConfiguracionProduccionTest` | Que algo pensado para desarrollo se cuele en producción |
+
+### 2 · Uso real, apartado por apartado
+
+**236 casos** que recorren la aplicación *como la usa alguien*, con usuarios
+desechables y por los mismos formularios que envía el navegador. Los 23 apartados
+de los dos modos, más 13 recorridos completos.
+
+Los casos se ordenan por **probabilidad de que un usuario llegue ahí**: lo que
+hace todo el mundo, el uso normal, **el usuario que se equivoca** —la banda que
+más defectos entrega— y lo raro pero grave.
+
+Encontró siete defectos que las 1.085 pruebas de entonces no veían, entre ellos un
+formato de moneda que **cambiaba según la máquina donde corriera el servidor** y
+un mensaje técnico de la base de datos que llegaba a la pantalla del usuario.
+
+### 3 · Seguridad, por clase de vulnerabilidad
+
+<a name="seguridad"></a>Una campana distinta: no *dónde llega un usuario* sino
+**por dónde entra un atacante**, ordenada por la prevalencia real del **OWASP
+Top 10**.
+
+| | Qué se comprueba |
+|---|---|
+| `PostsExigenCsrfTest` | Que las ~120 rutas que escriben **exijan su token**, y que ninguna atienda a un anónimo |
+| `AislamientoEntreEmpresasTest` | Que una empresa no vea a otra, ni por pantalla, ni por sesión forzada, ni por export |
+| `RecursosHijosAcotadosTest` | Que un soporte o una factura no se sirvan por su id a secas |
+| `NadaSeInyectaEnLaPantallaTest` | XSS, en las 107 plantillas y en lo que devuelve el servidor |
+| `CadenasDeAtaqueTest` | Siete cadenas completas: escalada de rol, robo de sesión, plan vencido |
+| `NadaSensibleSeEscapaTest` | Que una contraseña no acabe nunca en el archivo de registro |
+| `FormularioNoPrometeMasQueLaEntidadTest` | Que ningún formulario acepte más de lo que la base aguanta |
+
+**Ocho de las diez clases del OWASP Top 10 quedaron cerradas.** Las dependencias
+se auditaron con *OWASP dependency-check*: **de 100 vulnerabilidades conocidas a
+16**, y las dos críticas restantes no aplican a esta arquitectura.
+
+---
+
+## Puesta en marcha
+
+Requisitos: **JDK 17** y **MySQL 8**.
+
+```bash
+# 1 · Base de datos
+mysql -u TU_USUARIO -p < database/schema.sql
+
+# 2 · Configuración local
+cp src/main/resources/application.properties.example \
+   src/main/resources/application.properties
+#    …y edítalo con tus credenciales.
+
+# 3 · Arrancar
+./mvnw spring-boot:run          # http://localhost:8080
+
+# 4 · Pruebas
+./mvnw clean test
+```
+
+> `src/main/resources/application.properties` **no se versiona**: lleva
+> credenciales. El fichero `.example` documenta cada clave que hace falta.
+
+---
+
+## Estado
+
+**MVP completo, auditado y endurecido.** En ensayo de despliegue.
+
+**Construido**
+
+- Modo Personal y Modo Empresa, ambos operativos
+- Los tres planes, con su cobro y su degradación
+- Migración desde Excel de punta a punta
+- Capi
+- Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
+
+**Verificado**
+
+- **Auditoría de uso** — 23 apartados y 13 recorridos, 236 casos. Los siete
+  defectos que encontró, corregidos con su prueba.
+- **Auditoría de seguridad** — por capa de código y por clase del OWASP Top 10,
+  ocho de diez cerradas. Dependencias al día.
+- **Ensayo con el perfil de producción** — arranque, recorrido completo y
+  configuración real verificados contra una base aparte.
+- **Restauración de la copia de seguridad** — la base reconstruida desde cero
+  solo con el respaldo: 52 tablas y 1.378 filas, todas coincidentes.
+
+**Pendiente**
+
+- Ensayo con HTTPS, para cerrar lo que sin TLS no puede probarse
+- Verificación de correo antes del período de prueba
 
 ---
 
 ## Licencia
 
-**Software propietario — © 2026 Rubén Agudelo Alzate. Todos los derechos reservados.**
+**Software propietario. Todos los derechos reservados.**
 
-Este repositorio se publica con fines de **portafolio y demostración**. El código se puede
-visualizar para evaluación profesional, pero **no se permite** su uso, copia, modificación,
-distribución ni la reutilización de su lógica de negocio o conceptos de producto sin
-autorización escrita del autor. Ver [LICENSE](LICENSE) para los términos completos.
+Copyright © 2026 Rubén Agudelo Alzate.
 
-Nació como proyecto productivo del programa Tecnología en Análisis y Desarrollo de Software
-(ADSO); su condición formativa no altera la titularidad del autor. Las marcas y nombres de
-terceros referenciados pertenecen a sus respectivos propietarios.
+Este repositorio se publica con fines de **consulta y evaluación**. No se concede
+licencia para usar, copiar, modificar, distribuir ni explotar comercialmente el
+software ni ninguna parte de él. El texto completo y vinculante está en
+[`LICENSE`](LICENSE).
+
+Las bibliotecas de terceros conservan sus propias licencias, y ninguna de las
+condiciones de arriba pretende alterarlas.
 
 ---
 
 <div align="center">
-
-*Construido con Spring Boot y atención al detalle. Pensado para escalar.*
-
+<sub>Hecho en Colombia.</sub>
 </div>
