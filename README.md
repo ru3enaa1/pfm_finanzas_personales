@@ -12,9 +12,14 @@ calendario DIAN por el otro. Sin que ninguna se meta con la otra.
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-6DB33F?logo=spring)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)](https://www.mysql.com/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
-[![Pruebas](https://img.shields.io/badge/pruebas-1369-2F9E7E)](#pruebas)
+[![Pruebas](https://img.shields.io/badge/pruebas-1372-2F9E7E)](#pruebas)
 [![OWASP](https://img.shields.io/badge/seguridad-auditada%20seg%C3%BAn%20OWASP-5B8DEF)](#seguridad)
 [![Licencia](https://img.shields.io/badge/licencia-propietaria-C4985A)](#licencia)
+
+<br>
+
+<img src="docs/capturas/01-landing.png" width="900"
+     alt="Página de inicio de Pfm: «Controla tus finanzas. Tu dinero y tu negocio en un solo lugar»">
 
 </div>
 
@@ -50,6 +55,33 @@ Para llevar tu propia plata, sin abrir ninguna empresa.
 | **Alertas** | Recordatorios de gastos fijos y avisos por correo |
 | **Multimoneda** | COP, USD y EUR con conversión y tasa histórica |
 
+<img src="docs/capturas/03-panel-personal.png" alt="Panel del Modo Personal">
+
+<sub><b>El panel</b> · saldo de la cuenta, los gastos fijos que aún no se han pagado y los últimos movimientos, sin entrar a ninguna pantalla.</sub>
+
+<table>
+<tr>
+<td width="50%">
+<img src="docs/capturas/04-transacciones.png" alt="Historial de transacciones por categoría">
+<sub><b>Transacciones</b> · el historial con lo que entra y lo que sale, y el saldo del mes arriba.</sub>
+</td>
+<td width="50%">
+<img src="docs/capturas/05-presupuestos.png" alt="Presupuestos con barra de avance">
+<sub><b>Presupuestos</b> · un tope por categoría; el de suscripciones ya en ámbar al 70%.</sub>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="docs/capturas/06-fondos.png" alt="Fondos de ahorro con meta anual">
+<sub><b>Fondos de ahorro</b> · bolsas con meta anual y su proyección.</sub>
+</td>
+<td width="50%">
+<img src="docs/capturas/07-informes.png" alt="Informes: evolución del saldo y reparto del gasto">
+<sub><b>Informes</b> · la evolución del saldo y en qué se fue el dinero. Exportable.</sub>
+</td>
+</tr>
+</table>
+
 ### Modo Empresa
 
 Contabilidad completa para una pyme colombiana, con validez fiscal.
@@ -70,6 +102,38 @@ Contabilidad completa para una pyme colombiana, con validez fiscal.
 | **Colaboradores** | Cinco roles: propietario, contador, auxiliar contable, revisor fiscal y socio en solo lectura |
 | **Activos digitales** | Trazabilidad de cripto con score de origen de fondos |
 
+<img src="docs/capturas/08-panel-empresa.png" alt="Tablero ejecutivo del Modo Empresa">
+
+<sub><b>El tablero ejecutivo</b> · caja, ingresos, gastos y utilidad con su margen; la serie de seis meses, la salud fiscal y los vencimientos que vienen, en una pantalla.</sub>
+
+<table>
+<tr>
+<td width="50%">
+<img src="docs/capturas/09-movimientos.png" alt="Movimientos del mes con IVA neto y pulso de caja">
+<sub><b>Movimientos</b> · el IVA neto ya calculado, y el pulso de caja día a día.</sub>
+</td>
+<td width="50%">
+<img src="docs/capturas/10-facturacion.png" alt="Facturación de venta con numeración consecutiva">
+<sub><b>Facturación</b> · numeración consecutiva, cliente con su NIT y estado de cobro.</sub>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="docs/capturas/11-libros.png" alt="Plan de cuentas sobre el PUC">
+<sub><b>Contabilidad</b> · el plan de cuentas sobre el PUC, con asientos, retenciones y activos fijos.</sub>
+</td>
+<td width="50%">
+<img src="docs/capturas/12-calendario-dian.png" alt="Calendario tributario DIAN del año">
+<sub><b>DIAN</b> · qué se debe, cuándo vence y qué ya está pagado, en todo el año.</sub>
+</td>
+</tr>
+</table>
+
+> Las capturas del Modo Empresa usan la **empresa de práctica** que trae el propio
+> producto —de ahí la etiqueta *Práctica* junto al nombre—. Viene sembrada con
+> datos de ejemplo para que se pueda probar la contabilidad sin arriesgar una
+> empresa real.
+
 ### Lo que une a los dos
 
 - **Capi**, un asistente que acompaña ambos modos y responde sobre tus propios datos.
@@ -78,6 +142,10 @@ Contabilidad completa para una pyme colombiana, con validez fiscal.
   esa frontera no se mueva.
 - **Enlace de auditor.** Una vista de solo lectura para el contador, con **token
   expirable y sin necesidad de cuenta**.
+
+<img src="docs/capturas/13-capi.png" alt="Capi respondiendo sobre los datos de la empresa">
+
+<sub><b>Capi</b> · responde con tus propias cifras —lo que queda en caja después de lo que debes, lo pendiente con la DIAN— y <b>funciona sin conectar ninguna IA</b>: busca en tus datos. Conectar un modelo solo añade preguntarle en tus palabras.</sub>
 
 ---
 
@@ -96,12 +164,18 @@ Tú emparejas las columnas —nada se adivina cuando adivinar cambiaría un núm
 la importación dice **qué fila no pudo leer y por qué**, y si aun así sale mal,
 **se deshace**.
 
+<img src="docs/capturas/14-importar-excel.png" alt="Asistente de importación desde Excel en cinco pasos">
+
+<sub>Cinco pasos, y el tercero es <b>tuyo</b>: emparejar las columnas. Nada se adivina cuando adivinar cambiaría un número.</sub>
+
 ---
 
 ## Planes
 
 Al registrarte entras con **30 días de Pro incluidos**. Al terminar, la cuenta
 vuelve a Free automáticamente y no se cobra nada.
+
+<img src="docs/capturas/02-precios.png" alt="Los tres planes: Free, Pro y Empresa">
 
 | | **Free** | **Pro** | **Empresa** |
 |---|---|---|---|
@@ -148,8 +222,8 @@ cualquier pantalla y no envejecen cuando la aplicación cambia.
 | Servicios | 69 |
 | Plantillas | 107 |
 | Endpoints HTTP | 253 |
-| Código de pruebas | ~36.700 líneas en 137 clases |
-| Pruebas | **1.369** |
+| Código de pruebas | ~36.800 líneas en 138 clases |
+| Pruebas | **1.372** |
 
 ---
 
@@ -179,10 +253,10 @@ romper nada.
 
 ## Pruebas
 
-**1.369 pruebas, todas verdes con `clean`** — unas 36.700 líneas de código de
+**1.372 pruebas, todas verdes con `clean`** — unas 36.800 líneas de código de
 prueba para 48.600 de producción.
 
-No son 1.369 comprobaciones de que un método devuelve lo que devuelve. Hay tres
+No son 1.372 comprobaciones de que un método devuelve lo que devuelve. Hay tres
 familias, y cada una nació de un fallo real que la anterior no habría cogido.
 
 ### 1 · Lo que solo se ve mirando
