@@ -12,7 +12,7 @@ calendario DIAN por el otro. Sin que ninguna se meta con la otra.
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-6DB33F?logo=spring)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)](https://www.mysql.com/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
-[![Pruebas](https://img.shields.io/badge/pruebas-1372-2F9E7E)](#pruebas)
+[![Pruebas](https://img.shields.io/badge/pruebas-1639-2F9E7E)](#pruebas)
 [![OWASP](https://img.shields.io/badge/seguridad-auditada%20seg%C3%BAn%20OWASP-5B8DEF)](#seguridad)
 [![Licencia](https://img.shields.io/badge/licencia-propietaria-C4985A)](#licencia)
 
@@ -89,17 +89,18 @@ Contabilidad completa para una pyme colombiana, con validez fiscal.
 | | |
 |---|---|
 | **Panel** | Caja disponible, ingresos, gastos y utilidad del período, con serie de seis meses |
-| **Movimientos** | Ingresos y egresos con IVA y retenciones calculados según el régimen del tercero |
-| **Facturación** | Emisión y numeración consecutiva, cotizaciones y notas |
+| **Movimientos** | Ingresos y egresos con IVA, impuesto al consumo y retenciones —también la de IVA— calculados según el régimen del tercero y la fecha del hecho |
+| **Facturación** | Emisión y numeración consecutiva, cotizaciones, notas crédito con los conceptos de la DIAN y documento soporte para comprarle a quien no factura |
 | **Contabilidad** | Plan de cuentas editable, asientos automáticos y manuales, libros y balance de prueba |
 | **Salud contable** | Seis comprobaciones cruzadas que dicen cuál no cuadra, **por cuánto** y dónde se arregla |
-| **DIAN** | Calendario de vencimientos que se mueve con el dígito del NIT, retenciones y exógena |
+| **DIAN** | Calendario de vencimientos que se mueve con el dígito del NIT; borradores de los formularios 300 (IVA), 310 (impuesto al consumo) y 2593 (anticipo del Régimen Simple), el cierre del año del Simple, retenciones y exógena |
 | **Inventario** | Catálogo con costo y existencias, y kardex valorizado |
-| **Activos fijos** | Alta, depreciación y baja |
-| **Nómina** | Liquidación con sus aportes y provisiones |
+| **Activos fijos** | Alta, depreciación y baja, con el IVA de la compra como mayor valor o como descuento en renta |
+| **Nómina** | Liquidación con sus aportes, provisiones y retención, con el salario mínimo, el auxilio y la UVT del año del período |
 | **Cierres** | Mensual —con carpeta lista para el contador— y anual |
 | **Terceros** | Clientes y proveedores con su régimen y su documento |
-| **Colaboradores** | Cinco roles: propietario, contador, auxiliar contable, revisor fiscal y socio en solo lectura |
+| **Colaboradores** | Seis roles: propietario, contador, auxiliar contable, revisor fiscal, socio en solo lectura y vendedora del local |
+| **Local compartido** | Varios negocios, cada uno con su NIT, venden en un mismo local: caja única, mercancía en consignación, liquidación con la comisión del local y factura en mandato. El local vende también lo suyo |
 | **Activos digitales** | Trazabilidad de cripto con score de origen de fondos |
 
 <img src="docs/capturas/08-panel-empresa.png" alt="Tablero ejecutivo del Modo Empresa">
@@ -187,6 +188,9 @@ vuelve a Free automáticamente y no se cobra nada.
 | Modo Empresa | — | Sobre una **empresa de práctica** | Sobre **tu empresa real** |
 | Invitar a tu contador | — | — | Sí |
 
+Un **local compartido** paga el plan Empresa más un complemento por cada negocio
+que tiene en custodia; el cobro lo muestra línea por línea.
+
 > **Degradar no es despojar.** Si dejas de pagar, no se borra nada: la cuenta
 > vuelve a Free y la empresa pasa a **solo lectura**. La sigues viendo entera y
 > puedes exportar tus libros, tu inventario y tus movimientos. Lo que no puedes
@@ -217,13 +221,13 @@ cualquier pantalla y no envejecen cuando la aplicación cambia.
 
 | | |
 |---|---|
-| Código Java | ~48.600 líneas en 423 clases |
-| Entidades | 52 |
-| Servicios | 69 |
-| Plantillas | 107 |
-| Endpoints HTTP | 253 |
-| Código de pruebas | ~36.800 líneas en 138 clases |
-| Pruebas | **1.372** |
+| Código Java | ~65.500 líneas en 527 clases |
+| Entidades | 72 |
+| Servicios | 90 |
+| Plantillas | 129 |
+| Endpoints HTTP | 310 |
+| Código de pruebas | ~46.300 líneas en 161 clases |
+| Pruebas | **1.639** |
 
 ---
 
@@ -245,6 +249,13 @@ lecturas dan cifras creíbles y una está mal en un 19%. Se pregunta.
 accionar— sino la comprobación que falla, la diferencia exacta y el enlace a la
 pantalla donde se arregla.
 
+**Las cifras de la ley tienen fecha.** La UVT, el salario mínimo y el auxilio de
+transporte se guardan por año, y las tarifas y cuantías mínimas con su vigencia.
+Cada cálculo usa las de la fecha del hecho: una retención de 2025 registrada hoy
+sale con la UVT de 2025. Cuando el Consejo de Estado suspende un decreto, es una
+fila nueva, no un cambio de código. Un registro normativo versionado junto al
+código dice, de cada cifra, qué norma la fija, dónde vive y qué prueba la cuida.
+
 **El esquema se versiona a mano y es idempotente.** `ddl-auto` está en `none`.
 Cada migración vive en `database/schema.sql` y puede volver a ejecutarse sin
 romper nada.
@@ -253,10 +264,10 @@ romper nada.
 
 ## Pruebas
 
-**1.372 pruebas, todas verdes con `clean`** — unas 36.800 líneas de código de
-prueba para 48.600 de producción.
+**1.639 pruebas, todas verdes con `clean`** — unas 46.300 líneas de código de
+prueba para 65.500 de producción.
 
-No son 1.372 comprobaciones de que un método devuelve lo que devuelve. Hay tres
+No son 1.639 comprobaciones de que un método devuelve lo que devuelve. Hay tres
 familias, y cada una nació de un fallo real que la anterior no habría cogido.
 
 ### 1 · Lo que solo se ve mirando
@@ -298,10 +309,10 @@ Top 10**.
 
 | | Qué se comprueba |
 |---|---|
-| `PostsExigenCsrfTest` | Que las ~120 rutas que escriben **exijan su token**, y que ninguna atienda a un anónimo |
+| `PostsExigenCsrfTest` | Que las ~150 rutas que escriben **exijan su token**, y que ninguna atienda a un anónimo |
 | `AislamientoEntreEmpresasTest` | Que una empresa no vea a otra, ni por pantalla, ni por sesión forzada, ni por export |
 | `RecursosHijosAcotadosTest` | Que un soporte o una factura no se sirvan por su id a secas |
-| `NadaSeInyectaEnLaPantallaTest` | XSS, en las 107 plantillas y en lo que devuelve el servidor |
+| `NadaSeInyectaEnLaPantallaTest` | XSS, en las 129 plantillas y en lo que devuelve el servidor |
 | `CadenasDeAtaqueTest` | Siete cadenas completas: escalada de rol, robo de sesión, plan vencido |
 | `NadaSensibleSeEscapaTest` | Que una contraseña no acabe nunca en el archivo de registro |
 | `FormularioNoPrometeMasQueLaEntidadTest` | Que ningún formulario acepte más de lo que la base aguanta |
@@ -314,6 +325,13 @@ cadenas de ataque que encadenan pasos que por separado no son nada.
 Las dependencias se auditan con **OWASP dependency-check** contra la base del
 NVD, y se mantienen al día: el trabajo de refuerzo incluyó actualizar el
 framework, el servidor de aplicaciones y las bibliotecas de documentos.
+
+### Y antes de cerrar una línea de trabajo, un recorrido
+
+Una prueba la recorre de punta a punta **contra una copia de la base real** —se
+niega a correr en otra— con cada cifra calculada a mano: 113 casos el local
+compartido y 67 el Hito Fiscal. Lo que todavía no cumple la norma no cuenta
+como falla: queda como sonda, con cifras, para decidir qué va primero.
 
 ---
 
@@ -344,7 +362,9 @@ cp src/main/resources/application.properties.example \
 
 ## Estado
 
-**MVP completo, auditado y endurecido.** En ensayo de despliegue.
+**MVP aprobado en la sustentación, auditado y endurecido.** En ensayo de
+despliegue. Desde entonces el trabajo es producto: el local compartido y el Hito
+Fiscal salieron de conversaciones con microempresarios.
 
 **Construido**
 
@@ -352,6 +372,10 @@ cp src/main/resources/application.properties.example \
 - Los tres planes, con su cobro y su degradación
 - Migración desde Excel de punta a punta
 - Capi
+- Local compartido: caja de varios negocios, consignación, liquidación y factura en mandato
+- Hito Fiscal: notas crédito, documento soporte, Régimen Simple, retención de IVA,
+  impuesto al consumo (formulario 310) e IVA de los activos fijos
+- Las cifras legales de cada año, con su registro normativo
 - Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
 
 **Verificado**
@@ -364,11 +388,15 @@ cp src/main/resources/application.properties.example \
   configuración real verificados contra una base aparte.
 - **Restauración de la copia de seguridad** — la base reconstruida desde cero
   solo con el respaldo: 52 tablas y 1.378 filas, todas coincidentes.
+- **Recorridos contra una copia de la base** — el local compartido (113 casos) y
+  el Hito Fiscal (67), todos bien.
 
 **Pendiente**
 
 - Ensayo con HTTPS, para cerrar lo que sin TLS no puede probarse
 - Verificación de correo antes del período de prueba
+- Facturación electrónica con un proveedor tecnológico autorizado: hoy la factura
+  sale como comprobante interno, sin CUFE
 
 ---
 
