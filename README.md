@@ -171,6 +171,60 @@ la importación dice **qué fila no pudo leer y por qué**, y si aun así sale m
 
 ---
 
+## PFM Cnota
+
+**Las cuentas del negocio del cuaderno, desde el celular.**
+
+Pfm le sirve a quien ya lleva cuentas. Cnota es para quien todavía las lleva en
+un cuaderno, o de memoria: la persona que teje, cultiva, cocina o vende en una
+feria y necesita saber **cuánto le quedó**, no aprender contabilidad. Es una
+aplicación aparte, hermana de Pfm, que se instala desde el navegador y
+**funciona sin señal**.
+
+<img src="docs/capturas/15-cnota.png" alt="Página de PFM Cnota: «Las cuentas de tu negocio, sin enredos»">
+
+<sub><b>PFM Cnota</b> · en piloto. Se entra con un código de invitación y es gratis.</sub>
+
+### Lo que hace
+
+| | |
+|---|---|
+| **Vendí y Gasté** | Dos botones. Una venta se anota tocando el producto; un gasto, escogiendo en qué fue y cuánto |
+| **Fiado** | Quién quedó debiendo y cuánto, y «Me pagó» cuando abona. Lo mismo con lo que el negocio debe |
+| **Productos y servicios** | Un producto se vende por unidad o por medida (libra, kilo, litro, metro). Un servicio se cobra por persona, por hora o a precio fijo, como un taller o un plan mensual |
+| **Para qué fue el gasto** | Un gasto puede ir «para» un producto, y la app dice cuánto se le ha gastado y si ya se recuperó. No es inventario: no descuenta material |
+| **Hoy** | Cómo va el mes —o el día—: lo vendido, lo gastado y lo que queda |
+| **Informes** | Por día, semana, mes o año, con lo que más se vendió y lo que más se compró |
+| **Copia de seguridad** | Las cuentas se guardan en un archivo y se recuperan en otro celular |
+
+La bienvenida pregunta a qué se dedica la persona y con eso arma la app: las
+medidas que ofrece, las categorías de gasto y el aspecto. No hay nada que
+configurar.
+
+### Cómo se conecta con Pfm
+
+Cnota está pensada como la puerta de entrada: lo que la persona anota en
+lenguaje llano —«vendí», «gasté», «me quedó debiendo»— Pfm lo recibe y lo
+convierte en asientos contables, para que una entidad de apoyo o un contador
+vean cuentas en regla sin que nadie haya tenido que aprender el PUC.
+
+- **El lado de Pfm está construido**: el alta por invitación, la recepción de lo
+  anotado y la entrada desde un segundo celular, con su contrato documentado.
+- **En el piloto la app corre sola.** Mientras Pfm no esté desplegado, Cnota se
+  publica sin servidor: todo lo anotado **se queda en el celular** y no sale de
+  él. Lo pendiente por enviar queda en cola para cuando haya a dónde.
+- **Lo que falta**: desplegar Pfm, encender la conexión y que un contador revise
+  la correspondencia entre lo que se anota y las cuentas contables.
+
+### Por dentro
+
+Es una PWA con Vite y Preact que guarda en IndexedDB y se sirve como archivos
+estáticos. Lleva **203 pruebas** propias
+(Vitest) y, antes de cada publicación, un revisor que la detiene si el paquete
+trae mapas de código, rutas del equipo, claves o rastros de Pfm.
+
+---
+
 ## Planes
 
 Al registrarte entras con **30 días de Pro incluidos**. Al terminar, la cuenta
@@ -377,6 +431,8 @@ Fiscal salieron de conversaciones con microempresarios.
   impuesto al consumo (formulario 310) e IVA de los activos fijos
 - Las cifras legales de cada año, con su registro normativo
 - Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
+- PFM Cnota: la aplicación del celular (versión 0.7, en piloto cerrado por invitación)
+  y su lado en Pfm
 
 **Verificado**
 
@@ -394,6 +450,7 @@ Fiscal salieron de conversaciones con microempresarios.
 **Pendiente**
 
 - Ensayo con HTTPS, para cerrar lo que sin TLS no puede probarse
+- Conectar PFM Cnota con Pfm una vez desplegado, y la revisión de sus cuentas por un contador
 - Verificación de correo antes del período de prueba
 - Facturación electrónica con un proveedor tecnológico autorizado: hoy la factura
   sale como comprobante interno, sin CUFE

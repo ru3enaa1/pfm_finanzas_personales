@@ -53,6 +53,9 @@ Marcadas con ★ las que más cuentan si hay que elegir pocas.
 - ★ `13-capi.png` — el asistente
 - `14-importar-excel.png` — el salto desde la hoja de cálculo
 
+**PFM Cnota**
+- `15-cnota.png` — la página de Cnota en el sitio público
+
 ## Después
 
 Con las imágenes aquí, se acomodan en el `README.md` con su descripción.
