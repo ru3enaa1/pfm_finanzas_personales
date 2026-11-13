@@ -190,11 +190,13 @@ aplicación aparte, hermana de Pfm, que se instala desde el navegador y
 | | |
 |---|---|
 | **Vendí y Gasté** | Dos botones. Una venta se anota tocando el producto; un gasto, escogiendo en qué fue y cuánto |
-| **Fiado** | Quién quedó debiendo y cuánto, y «Me pagó» cuando abona. Lo mismo con lo que el negocio debe |
-| **Productos y servicios** | Un producto se vende por unidad o por medida (libra, kilo, litro, metro). Un servicio se cobra por persona, por hora o a precio fijo, como un taller o un plan mensual |
-| **Para qué fue el gasto** | Un gasto puede ir «para» un producto, y la app dice cuánto se le ha gastado y si ya se recuperó. No es inventario: no descuenta material |
+| **Fiado** | Quién quedó debiendo y cuánto, y «Me pagó» cuando abona. Se puede fiar solo una parte de la venta. Lo mismo con lo que el negocio debe a sus proveedores |
+| **Productos y servicios** | Un producto se vende por unidad o por medida (libra, kilo, litro, metro), con su código si lo tiene. Un servicio se cobra por persona, por hora o a precio fijo, como un taller o un plan mensual |
+| **Lo que tengo** | A cada producto se le puede llevar la cuenta de cuántos quedan: baja sola al vender y avisa cuando se está acabando. Es opcional y nunca impide una venta |
+| **Descuentos y promociones** | Un descuento en la venta, por pieza o sobre el total, en porcentaje o en pesos. O una promoción del producto hasta una fecha, que se aplica sola y se acaba sola |
+| **Para qué fue el gasto** | Un gasto puede ir «para» un producto, y la app dice cuánto se le ha gastado y si ya se recuperó |
 | **Hoy** | Cómo va el mes —o el día—: lo vendido, lo gastado y lo que queda |
-| **Informes** | Por día, semana, mes o año, con lo que más se vendió y lo que más se compró |
+| **Informes** | Por día, semana, mes o año, con lo que más se vendió y lo que más se compró. Un panel compara con el periodo anterior y muestra el mejor día, cómo pagaron y lo que hay por cobrar |
 | **Copia de seguridad** | Las cuentas se guardan en un archivo y se recuperan en otro celular |
 
 La bienvenida pregunta a qué se dedica la persona y con eso arma la app: las
@@ -213,13 +215,16 @@ vean cuentas en regla sin que nadie haya tenido que aprender el PUC.
 - **En el piloto la app corre sola.** Mientras Pfm no esté desplegado, Cnota se
   publica sin servidor: todo lo anotado **se queda en el celular** y no sale de
   él. Lo pendiente por enviar queda en cola para cuando haya a dónde.
+- **Ensayado de punta a punta en local.** Un celular con 500 productos y 610
+  anotaciones sin enviar se conectó por primera vez: todo subió, bajó idéntico a
+  un segundo celular y reenviarlo no duplicó nada.
 - **Lo que falta**: desplegar Pfm, encender la conexión y que un contador revise
   la correspondencia entre lo que se anota y las cuentas contables.
 
 ### Por dentro
 
 Es una PWA con Vite y Preact que guarda en IndexedDB y se sirve como archivos
-estáticos. Lleva **203 pruebas** propias
+estáticos. Lleva **294 pruebas** propias
 (Vitest) y, antes de cada publicación, un revisor que la detiene si el paquete
 trae mapas de código, rutas del equipo, claves o rastros de Pfm.
 
@@ -431,7 +436,7 @@ Fiscal salieron de conversaciones con microempresarios.
   impuesto al consumo (formulario 310) e IVA de los activos fijos
 - Las cifras legales de cada año, con su registro normativo
 - Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
-- PFM Cnota: la aplicación del celular (versión 0.7, en piloto cerrado por invitación)
+- PFM Cnota: la aplicación del celular (versión 0.13, en piloto cerrado por invitación)
   y su lado en Pfm
 
 **Verificado**
