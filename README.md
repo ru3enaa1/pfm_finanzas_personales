@@ -472,7 +472,7 @@ Fiscal salieron de conversaciones con microempresarios.
   impuesto al consumo (formulario 310) e IVA de los activos fijos
 - Las cifras legales de cada año, con su registro normativo
 - Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
-- PFM Cnota: la aplicación del celular (versión 0.21.6, en piloto cerrado por
+- PFM Cnota: la aplicación del celular (versión 0.21.7, en piloto cerrado por
   invitación), con anotar hablando en prueba, y su lado en Pfm
 - El puente entre los dos modos: lo que el dueño saca del negocio le llega, como
   sugerencia, a su Modo Personal
