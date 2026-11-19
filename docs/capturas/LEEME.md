@@ -55,6 +55,9 @@ Marcadas con ★ las que más cuentan si hay que elegir pocas.
 
 **PFM Cnota**
 - `15-cnota.png` — la página de Cnota en el sitio público
+- `16-cnota-app.png` — la app: tres pantallas del celular lado a lado (Hoy,
+  Vendí y anotar hablando). Cada una se toma a 360 × 780 con datos de ejemplo y
+  se ponen sobre un fondo cálido, a 1440 px de ancho.
 
 ## Después
 

@@ -12,7 +12,7 @@ calendario DIAN por el otro. Sin que ninguna se meta con la otra.
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-6DB33F?logo=spring)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)](https://www.mysql.com/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
-[![Pruebas](https://img.shields.io/badge/pruebas-1639-2F9E7E)](#pruebas)
+[![Pruebas](https://img.shields.io/badge/pruebas-1708-2F9E7E)](#pruebas)
 [![OWASP](https://img.shields.io/badge/seguridad-auditada%20seg%C3%BAn%20OWASP-5B8DEF)](#seguridad)
 [![Licencia](https://img.shields.io/badge/licencia-propietaria-C4985A)](#licencia)
 
@@ -90,6 +90,7 @@ Contabilidad completa para una pyme colombiana, con validez fiscal.
 |---|---|
 | **Panel** | Caja disponible, ingresos, gastos y utilidad del período, con serie de seis meses |
 | **Movimientos** | Ingresos y egresos con IVA, impuesto al consumo y retenciones —también la de IVA— calculados según el régimen del tercero y la fecha del hecho |
+| **Cuentas y bancos** | Caja, bancos y tarjetas de crédito —la tarjeta como lo que es, una deuda—, y los traslados entre ellas asentados en los libros |
 | **Facturación** | Emisión y numeración consecutiva, cotizaciones, notas crédito con los conceptos de la DIAN y documento soporte para comprarle a quien no factura |
 | **Contabilidad** | Plan de cuentas editable, asientos automáticos y manuales, libros y balance de prueba |
 | **Salud contable** | Seis comprobaciones cruzadas que dicen cuál no cuadra, **por cuánto** y dónde se arregla |
@@ -137,6 +138,10 @@ Contabilidad completa para una pyme colombiana, con validez fiscal.
 
 ### Lo que une a los dos
 
+- **Lo que sacas del negocio llega a tus finanzas.** Cuando sacas plata de tu
+  negocio para la casa —o pones de tu bolsillo—, el Modo Personal te lo sugiere
+  y tú escoges la cuenta. Nada se crea solo, y en la contabilidad de la empresa
+  queda contra tu capital, no como gasto ni como venta.
 - **Capi**, un asistente que acompaña ambos modos y responde sobre tus propios datos.
 - **Aislamiento por diseño.** Un colaborador ve la empresa a la que lo invitaste y
   nada más: nunca las finanzas personales de nadie. Hay pruebas dedicadas a que
@@ -176,8 +181,8 @@ la importación dice **qué fila no pudo leer y por qué**, y si aun así sale m
 **Las cuentas del negocio del cuaderno, desde el celular.**
 
 Pfm le sirve a quien ya lleva cuentas. Cnota es para quien todavía las lleva en
-un cuaderno, o de memoria: la persona que teje, cultiva, cocina o vende en una
-feria y necesita saber **cuánto le quedó**, no aprender contabilidad. Es una
+un cuaderno, o de memoria: la persona que teje, cultiva, cocina, revende o vende
+en una feria y necesita saber **cuánto le quedó**, no aprender contabilidad. Es una
 aplicación aparte, hermana de Pfm, que se instala desde el navegador y
 **funciona sin señal**.
 
@@ -190,14 +195,22 @@ aplicación aparte, hermana de Pfm, que se instala desde el navegador y
 | | |
 |---|---|
 | **Vendí y Gasté** | Dos botones. Una venta se anota tocando el producto; un gasto, escogiendo en qué fue y cuánto |
+| **Anotar hablando** | En prueba, y se enciende en Ajustes. Se dice «vendí dos gorros de lana, fiado a doña Inés» y la app llena el formulario; nada se guarda hasta que la persona lo confirma con un toque. Entiende también lo que llega, lo que pagan, los precios nuevos y cuántos quedan, y responde cuánto debe alguien. Sin señal no puede oír: lo dice y ofrece anotar a mano |
 | **Fiado** | Quién quedó debiendo y cuánto, y «Me pagó» cuando abona. Se puede fiar solo una parte de la venta. Lo mismo con lo que el negocio debe a sus proveedores |
-| **Productos y servicios** | Un producto se vende por unidad o por medida (libra, kilo, litro, metro), con su código si lo tiene. Un servicio se cobra por persona, por hora o a precio fijo, como un taller o un plan mensual |
+| **Productos y servicios** | Un producto se vende por unidad o por medida (libra, kilo, litro, metro), con su código si lo tiene. Un servicio se cobra por persona, por hora o a precio fijo, como un taller o un plan mensual, o a un precio que cambia cada vez, como un viaje o un arreglo |
+| **Surtir y lo que cuesta** | Lo que llega de un producto se anota en un paso: sube lo que se tiene, guarda a cuánto salió cada pieza y, si quedó debiendo, la deuda con el proveedor. Con el costo, la app dice cuánto se gana en cada pieza y, en Informes, cuánto se ganó en lo vendido. Cada producto dice a quién se le compra |
 | **Lo que tengo** | A cada producto se le puede llevar la cuenta de cuántos quedan: baja sola al vender y avisa cuando se está acabando. Es opcional y nunca impide una venta |
 | **Descuentos y promociones** | Un descuento en la venta, por pieza o sobre el total, en porcentaje o en pesos. O una promoción del producto hasta una fecha, que se aplica sola y se acaba sola |
+| **Tarjeta de crédito** | Lo comprado con tarjeta es gasto del día, pero no sale de la plata de hoy: Hoy dice aparte cuánto se debe en ella. Se paga toda o compra por compra, y los intereses cuentan como gasto |
+| **Tu plata y la del negocio** | «Saqué para mí» y «Puse de mi bolsillo» mueven la plata que hay en la mano sin contar como gasto ni como venta |
 | **Para qué fue el gasto** | Un gasto puede ir «para» un producto, y la app dice cuánto se le ha gastado y si ya se recuperó |
 | **Hoy** | Cómo va el mes —o el día—: lo vendido, lo gastado y lo que queda |
 | **Informes** | Por día, semana, mes o año, con lo que más se vendió y lo que más se compró. Un panel compara con el periodo anterior y muestra el mejor día, cómo pagaron y lo que hay por cobrar |
 | **Copia de seguridad** | Las cuentas se guardan en un archivo y se recuperan en otro celular |
+
+<img src="docs/capturas/16-cnota-app.png" alt="Tres pantallas de Cnota: Hoy, Vendí y anotar hablando">
+
+<sub><b>La app</b> · <b>Hoy</b> con lo vendido, lo gastado y lo que se debe en la tarjeta; <b>Vendí</b> con dos gorros escogidos y lo que queda de cada producto; y <b>anotar hablando</b>, que muestra lo que entendió y espera el «sí». Con datos de ejemplo.</sub>
 
 La bienvenida pregunta a qué se dedica la persona y con eso arma la app: las
 medidas que ofrece, las categorías de gasto y el aspecto. No hay nada que
@@ -210,11 +223,17 @@ lenguaje llano —«vendí», «gasté», «me quedó debiendo»— Pfm lo recib
 convierte en asientos contables, para que una entidad de apoyo o un contador
 vean cuentas en regla sin que nadie haya tenido que aprender el PUC.
 
+Cada cosa llega a su cuenta: lo comprado con tarjeta, como una deuda con el
+banco; lo que se surte para revender, como costo de la mercancía; y lo que el
+dueño saca para él, contra su capital —y de ahí, si lo acepta, a su Modo
+Personal—.
+
 - **El lado de Pfm está construido**: el alta por invitación, la recepción de lo
   anotado y la entrada desde un segundo celular, con su contrato documentado.
 - **En el piloto la app corre sola.** Mientras Pfm no esté desplegado, Cnota se
   publica sin servidor: todo lo anotado **se queda en el celular** y no sale de
-  él. Lo pendiente por enviar queda en cola para cuando haya a dónde.
+  él. Lo pendiente por enviar queda en cola para cuando haya a dónde. Lo único
+  que sale es la voz, y solo si se enciende anotar hablando.
 - **Ensayado de punta a punta en local.** Un celular con 500 productos y 610
   anotaciones sin enviar se conectó por primera vez: todo subió, bajó idéntico a
   un segundo celular y reenviarlo no duplicó nada.
@@ -224,9 +243,14 @@ vean cuentas en regla sin que nadie haya tenido que aprender el PUC.
 ### Por dentro
 
 Es una PWA con Vite y Preact que guarda en IndexedDB y se sirve como archivos
-estáticos. Lleva **294 pruebas** propias
+estáticos. Lleva **393 pruebas** propias
 (Vitest) y, antes de cada publicación, un revisor que la detiene si el paquete
 trae mapas de código, rutas del equipo, claves o rastros de Pfm.
+
+Anotar hablando usa el reconocimiento de voz del navegador, que envía el audio a
+su propio servicio —por eso necesita señal—. Entender la frase y llenar el
+formulario sí pasa en el celular, con reglas propias probadas frase por frase y
+sin ningún modelo de IA: lo que no entiende lo deja vacío en vez de adivinarlo.
 
 ---
 
@@ -280,13 +304,13 @@ cualquier pantalla y no envejecen cuando la aplicación cambia.
 
 | | |
 |---|---|
-| Código Java | ~65.500 líneas en 527 clases |
-| Entidades | 72 |
-| Servicios | 90 |
-| Plantillas | 129 |
-| Endpoints HTTP | 310 |
-| Código de pruebas | ~46.300 líneas en 161 clases |
-| Pruebas | **1.639** |
+| Código Java | ~69.700 líneas en 570 clases |
+| Entidades | 78 |
+| Servicios | 98 |
+| Plantillas | 130 |
+| Endpoints HTTP | 331 |
+| Código de pruebas | ~48.800 líneas en 172 clases |
+| Pruebas | **1.708** |
 
 ---
 
@@ -300,9 +324,16 @@ por construcción.
 método. La regla llegó a estar escrita en tres sitios y el desajuste dejó entrar
 al panel personal bajo el cromo de empresa; desde entonces, una regla, un sitio.
 
+**Sacar plata no es perderla.** Lo que el dueño saca del negocio va contra su
+capital, no al gasto: el negocio no sale en rojo por el mercado de la casa, y el
+Modo Personal lo recibe como ingreso si el dueño lo acepta. Es la frontera entre
+los dos modos, dicha en contabilidad.
+
 **Ninguna heurística decide sola algo que cambie un número.** En la importación,
 una columna llamada «Valor» puede ser base o puede llevar el IVA dentro: las dos
-lecturas dan cifras creíbles y una está mal en un 19%. Se pregunta.
+lecturas dan cifras creíbles y una está mal en un 19%. Se pregunta. Lo mismo al
+anotar hablando en Cnota: se muestra lo que se entendió, y nada se guarda hasta
+el «sí».
 
 **Salud contable no puntúa: señala.** No da una nota sobre 100 —que no se puede
 accionar— sino la comprobación que falla, la diferencia exacta y el enlace a la
@@ -315,6 +346,11 @@ sale con la UVT de 2025. Cuando el Consejo de Estado suspende un decreto, es una
 fila nueva, no un cambio de código. Un registro normativo versionado junto al
 código dice, de cada cifra, qué norma la fija, dónde vive y qué prueba la cuida.
 
+**En el celular, inventario periódico.** Cnota no lleva kardex: anota lo que se
+compra para revender y cuenta lo que hay, el sistema que el Decreto 2706 de 2012
+permite a las microempresas. El inventario valorizado, con costo promedio, es del
+Modo Empresa.
+
 **El esquema se versiona a mano y es idempotente.** `ddl-auto` está en `none`.
 Cada migración vive en `database/schema.sql` y puede volver a ejecutarse sin
 romper nada.
@@ -323,10 +359,10 @@ romper nada.
 
 ## Pruebas
 
-**1.639 pruebas, todas verdes con `clean`** — unas 46.300 líneas de código de
-prueba para 65.500 de producción.
+**1.708 pruebas, todas verdes con `clean`** — unas 48.800 líneas de código de
+prueba para 69.700 de producción.
 
-No son 1.639 comprobaciones de que un método devuelve lo que devuelve. Hay tres
+No son 1.708 comprobaciones de que un método devuelve lo que devuelve. Hay tres
 familias, y cada una nació de un fallo real que la anterior no habría cogido.
 
 ### 1 · Lo que solo se ve mirando
@@ -371,7 +407,7 @@ Top 10**.
 | `PostsExigenCsrfTest` | Que las ~150 rutas que escriben **exijan su token**, y que ninguna atienda a un anónimo |
 | `AislamientoEntreEmpresasTest` | Que una empresa no vea a otra, ni por pantalla, ni por sesión forzada, ni por export |
 | `RecursosHijosAcotadosTest` | Que un soporte o una factura no se sirvan por su id a secas |
-| `NadaSeInyectaEnLaPantallaTest` | XSS, en las 129 plantillas y en lo que devuelve el servidor |
+| `NadaSeInyectaEnLaPantallaTest` | XSS, en las 130 plantillas y en lo que devuelve el servidor |
 | `CadenasDeAtaqueTest` | Siete cadenas completas: escalada de rol, robo de sesión, plan vencido |
 | `NadaSensibleSeEscapaTest` | Que una contraseña no acabe nunca en el archivo de registro |
 | `FormularioNoPrometeMasQueLaEntidadTest` | Que ningún formulario acepte más de lo que la base aguanta |
@@ -436,8 +472,10 @@ Fiscal salieron de conversaciones con microempresarios.
   impuesto al consumo (formulario 310) e IVA de los activos fijos
 - Las cifras legales de cada año, con su registro normativo
 - Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
-- PFM Cnota: la aplicación del celular (versión 0.13, en piloto cerrado por invitación)
-  y su lado en Pfm
+- PFM Cnota: la aplicación del celular (versión 0.21.6, en piloto cerrado por
+  invitación), con anotar hablando en prueba, y su lado en Pfm
+- El puente entre los dos modos: lo que el dueño saca del negocio le llega, como
+  sugerencia, a su Modo Personal
 
 **Verificado**
 
@@ -456,6 +494,7 @@ Fiscal salieron de conversaciones con microempresarios.
 
 - Ensayo con HTTPS, para cerrar lo que sin TLS no puede probarse
 - Conectar PFM Cnota con Pfm una vez desplegado, y la revisión de sus cuentas por un contador
+- Probar anotar hablando con las personas del piloto, frase por frase
 - Verificación de correo antes del período de prueba
 - Facturación electrónica con un proveedor tecnológico autorizado: hoy la factura
   sale como comprobante interno, sin CUFE
