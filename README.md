@@ -12,7 +12,7 @@ calendario DIAN por el otro. Sin que ninguna se meta con la otra.
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.16-6DB33F?logo=spring)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql)](https://www.mysql.com/)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.1-005F0F?logo=thymeleaf)](https://www.thymeleaf.org/)
-[![Pruebas](https://img.shields.io/badge/pruebas-1709-2F9E7E)](#pruebas)
+[![Pruebas](https://img.shields.io/badge/pruebas-1716-2F9E7E)](#pruebas)
 [![OWASP](https://img.shields.io/badge/seguridad-auditada%20seg%C3%BAn%20OWASP-5B8DEF)](#seguridad)
 [![Licencia](https://img.shields.io/badge/licencia-propietaria-C4985A)](#licencia)
 
@@ -195,9 +195,10 @@ aplicación aparte, hermana de Pfm, que se instala desde el navegador y
 | | |
 |---|---|
 | **Vendí y Gasté** | Dos botones. Una venta se anota tocando el producto; un gasto, escogiendo en qué fue y cuánto |
-| **Anotar hablando** | En prueba, y se enciende en Ajustes. Se dice «vendí dos gorros de lana, fiado a doña Inés» y la app llena el formulario; nada se guarda hasta que la persona lo confirma con un toque. Entiende también lo que llega, lo que pagan, los precios nuevos y cuántos quedan, y responde cuánto debe alguien. Sin señal no puede oír: lo dice y ofrece anotar a mano |
-| **Paga después** | Para lo fiado y para el encargo con abono: quién quedó debiendo y cuánto, y «Me pagó» cuando abona. Se puede dejar debiendo solo una parte de la venta. Lo mismo con lo que el negocio debe a sus proveedores |
-| **Recibo por WhatsApp** | De cualquier venta sale el recibo, listo para mandárselo al cliente: lo que llevó, lo que abonó y lo que le queda por pagar. Cada negocio escribe una vez lo que su recibo dice al final —su garantía, sus condiciones—, y a quien debe se le manda su cuenta. La app no envía nada sola: abre WhatsApp y la persona lo manda |
+| **Anotar hablando** | En prueba, y se enciende en Ajustes. Se dice «vendí dos gorros de lana a doña Inés, paga después» y la app llena el formulario; nada se guarda hasta que la persona lo confirma con un toque. Entiende también los encargos («me encargaron dos bufandas para el viernes»), lo que llega, lo que pagan, los precios nuevos y cuántos quedan, y responde cuánto debe alguien y qué falta por entregar. Sin señal no puede oír: lo dice y ofrece anotar a mano |
+| **Paga después** | Lo fiado: quién quedó debiendo y cuánto, y «Me pagó» cuando abona. Se puede dejar debiendo solo una parte de la venta. Lo mismo con lo que el negocio debe a sus proveedores |
+| **Por entregar** | Lo que se encarga hoy y se entrega otro día: para quién, para cuándo, qué dejó y lo que adelantó. Hoy dice cuántos hay, cuál sigue y cuáles se atrasaron; al entregar se dice si pagó lo que faltaba. No cuenta como venta hasta que se entrega |
+| **Recibo por WhatsApp** | De cualquier venta —o de un pedido, con su número y el día de la entrega— sale el recibo, listo para mandárselo al cliente: lo que llevó, lo que abonó y lo que le queda por pagar. Cada negocio escribe una vez lo que su recibo dice al final —su garantía, sus condiciones—, y a quien debe se le manda su cuenta. La app no envía nada sola: abre WhatsApp y la persona lo manda |
 | **Productos y servicios** | Un producto se vende por unidad o por medida (libra, kilo, litro, metro), con su código si lo tiene. Un servicio se cobra por persona, por hora o a precio fijo, como un taller o un plan mensual, o a un precio que cambia cada vez, como un viaje o un arreglo |
 | **Surtir y lo que cuesta** | Lo que llega de un producto se anota en un paso: sube lo que se tiene, guarda a cuánto salió cada pieza y, si quedó debiendo, la deuda con el proveedor. Con el costo, la app dice cuánto se gana en cada pieza y, en Informes, cuánto se ganó en lo vendido. Cada producto dice a quién se le compra |
 | **Lo que tengo** | A cada producto se le puede llevar la cuenta de cuántos quedan: baja sola al vender y avisa cuando se está acabando. Es opcional y nunca impide una venta |
@@ -207,6 +208,7 @@ aplicación aparte, hermana de Pfm, que se instala desde el navegador y
 | **Para qué fue el gasto** | Un gasto puede ir «para» un producto, y la app dice cuánto se le ha gastado y si ya se recuperó |
 | **Hoy** | Cómo va el mes —o el día—: lo vendido, lo gastado y lo que queda |
 | **Informes** | Por día, semana, mes o año, con lo que más se vendió y lo que más se compró. Un panel compara con el periodo anterior y muestra el mejor día, cómo pagaron y lo que hay por cobrar |
+| **Fotos** | La de un recibo o de un pedido se toma en el momento o se escoge de las que ya hay. En el computador se toma con el celular: se le apunta a un código y la foto llega sola (con Pfm desplegado) |
 | **Copia de seguridad** | Las cuentas se guardan en un archivo y se recuperan en otro celular |
 
 <img src="docs/capturas/16-cnota-app.png" alt="Tres pantallas de Cnota: Hoy, Vendí y anotar hablando">
@@ -225,9 +227,10 @@ convierte en asientos contables, para que una entidad de apoyo o un contador
 vean cuentas en regla sin que nadie haya tenido que aprender el PUC.
 
 Cada cosa llega a su cuenta: lo comprado con tarjeta, como una deuda con el
-banco; lo que se surte para revender, como costo de la mercancía; y lo que el
-dueño saca para él, contra su capital —y de ahí, si lo acepta, a su Modo
-Personal—.
+banco; lo que se surte para revender, como costo de la mercancía; lo que un
+cliente adelanta por un encargo, como un anticipo que se cruza el día de la
+entrega; y lo que el dueño saca para él, contra su capital —y de ahí, si lo
+acepta, a su Modo Personal—.
 
 - **El lado de Pfm está construido**: el alta por invitación, la recepción de lo
   anotado y la entrada desde un segundo celular, con su contrato documentado.
@@ -238,14 +241,16 @@ Personal—.
   hablando; un recibo o un informe salen por WhatsApp cuando ella los envía.
 - **Ensayado de punta a punta en local.** Un celular con 500 productos y 610
   anotaciones sin enviar se conectó por primera vez: todo subió, bajó idéntico a
-  un segundo celular y reenviarlo no duplicó nada.
+  un segundo celular y reenviarlo no duplicó nada. Un encargo con anticipo hizo
+  el mismo camino, de la app a los libros: al entregarlo, el anticipo y lo que
+  debía el cliente quedaron en cero.
 - **Lo que falta**: desplegar Pfm, encender la conexión y que un contador revise
   la correspondencia entre lo que se anota y las cuentas contables.
 
 ### Por dentro
 
 Es una PWA con Vite y Preact que guarda en IndexedDB y se sirve como archivos
-estáticos. Lleva **412 pruebas** propias
+estáticos. Lleva **457 pruebas** propias
 (Vitest) y, antes de cada publicación, un revisor que la detiene si el paquete
 trae mapas de código, rutas del equipo, claves o rastros de Pfm.
 
@@ -306,13 +311,13 @@ cualquier pantalla y no envejecen cuando la aplicación cambia.
 
 | | |
 |---|---|
-| Código Java | ~69.700 líneas en 570 clases |
-| Entidades | 78 |
-| Servicios | 98 |
+| Código Java | ~70.300 líneas en 574 clases |
+| Entidades | 79 |
+| Servicios | 99 |
 | Plantillas | 130 |
-| Endpoints HTTP | 331 |
-| Código de pruebas | ~48.800 líneas en 172 clases |
-| Pruebas | **1.709** |
+| Endpoints HTTP | 334 |
+| Código de pruebas | ~49.200 líneas en 173 clases |
+| Pruebas | **1.716** |
 
 ---
 
@@ -330,6 +335,11 @@ al panel personal bajo el cromo de empresa; desde entonces, una regla, un sitio.
 capital, no al gasto: el negocio no sale en rojo por el mercado de la casa, y el
 Modo Personal lo recibe como ingreso si el dueño lo acepta. Es la frontera entre
 los dos modos, dicha en contabilidad.
+
+**Un encargo no es una venta.** Lo que se encarga hoy y se entrega después se
+vende el día de la entrega, como pide la norma de las microempresas. Lo que el
+cliente adelanta es una deuda con él (2805) hasta entonces, y ese día se cruza
+contra la venta, como hacen Alegra o Siigo al aplicar un anticipo a la factura.
 
 **Ninguna heurística decide sola algo que cambie un número.** En la importación,
 una columna llamada «Valor» puede ser base o puede llevar el IVA dentro: las dos
@@ -361,10 +371,10 @@ romper nada.
 
 ## Pruebas
 
-**1.709 pruebas, todas verdes con `clean`** — unas 48.800 líneas de código de
-prueba para 69.700 de producción.
+**1.716 pruebas, todas verdes con `clean`** — unas 49.200 líneas de código de
+prueba para 70.300 de producción.
 
-No son 1.709 comprobaciones de que un método devuelve lo que devuelve. Hay tres
+No son 1.716 comprobaciones de que un método devuelve lo que devuelve. Hay tres
 familias, y cada una nació de un fallo real que la anterior no habría cogido.
 
 ### 1 · Lo que solo se ve mirando
@@ -474,8 +484,9 @@ Fiscal salieron de conversaciones con microempresarios.
   impuesto al consumo (formulario 310) e IVA de los activos fijos
 - Las cifras legales de cada año, con su registro normativo
 - Sitio público: mensaje, planes, preguntas, páginas legales y SEO técnico
-- PFM Cnota: la aplicación del celular (versión 0.22.2, en piloto cerrado por
-  invitación), con anotar hablando en prueba, y su lado en Pfm
+- PFM Cnota: la aplicación del celular (versión 0.23.1, en piloto cerrado por
+  invitación), con pedidos por entregar y anotar hablando en prueba, y su lado
+  en Pfm
 - El puente entre los dos modos: lo que el dueño saca del negocio le llega, como
   sugerencia, a su Modo Personal
 
